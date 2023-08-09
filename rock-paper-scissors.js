@@ -19,23 +19,45 @@ function playerSelection() {
 
 // Writing playRound using nested ifs
 
+// function playRound(playerSelection, computerSelection) {
+//   if (playerSelection == 'rock' && computerSelection == 'paper') {
+//     return 'You lose! Paper beats Rock';
+//   } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+//     return 'You win! Rock beats Scissors';
+//   } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+//     return 'You win! Paper beats Rock';
+//   } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+//     return 'You lose! Scissors beat Paper';
+//   } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+//     return 'You win! Scissors beat Paper';
+//   } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+//     return 'You lose! Rock beats Scissors';
+//   } else {
+//     return 'It\'s a tie'
+//   }
+// }  
+
+// Writing playRound using switch and ternary
+
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == 'rock' && computerSelection == 'paper') {
-    return 'You lose! Paper beats Rock';
-  } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-    return 'You win! Rock beats Scissors';
-  } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-    return 'You win! Paper beats Rock';
-  } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-    return 'You lose! Scissors beat Paper';
-  } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-    return 'You win! Scissors beat Paper';
-  } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-    return 'You lose! Rock beats Scissors';
-  } else {
-    return 'It\'s a tie'
+  switch(playerSelection) {
+    case 'rock':
+      return (computerSelection == 'paper') ? 'You lose! Paper beats rock'
+        : (computerSelection == 'scissors')
+          ? 'You win! Rock beats scissors'
+          : 'It\'s a tie.'
+    case 'paper':
+      return (computerSelection == 'scissors') ? 'You lose! Scissors beat rock'
+        : (computerSelection == 'rock')
+          ? 'You win! Paper beats rock'
+          : 'It\'s a tie.'
+    case 'scissors':
+      return (computerSelection == 'rock') ? 'You lose! Rock beats scissors'
+        : (computerSelection == 'paper')
+          ? 'You win! Scissors beat paper'
+          : 'It\'s a tie.'
   }
-}  
+}
 
 function game() {
   let playerScore = 0;
@@ -43,7 +65,7 @@ function game() {
   let ties = 0;
   for (i = 0; i < 5; i++) {
     gameResult = playRound(playerSelection(), computerSelection());
-    console.log(gameResult);
+    console.log(gameResult)
     if (gameResult[4] == 'w') {
       playerScore += 1;
     } else if (gameResult[4] == 'l') {
@@ -55,4 +77,4 @@ function game() {
   return `Five rounds are over, you got ${playerScore} wins and ${(5 - playerScore)} lose(s). Number of ties are ${ties}.`
 }
 
-console.log(main());
+main();
