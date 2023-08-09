@@ -54,4 +54,4 @@ function game() {
   return `Five rounds are over, you got ${playerScore} wins and ${(5 - playerScore)} lose(s). Number of ties are ${ties}.`
 }
 
-main();
+console.log(main());
