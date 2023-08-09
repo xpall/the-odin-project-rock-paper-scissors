@@ -50,6 +50,7 @@ function game() {
     } else {
       ties += 1;
     }
+    console.log(gameResult);
   }
   return `Five rounds are over, you got ${playerScore} wins and ${(5 - playerScore)} lose(s). Number of ties are ${ties}.`
 }
