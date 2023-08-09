@@ -43,6 +43,7 @@ function game() {
   let ties = 0;
   for (i = 0; i < 5; i++) {
     gameResult = playRound(playerSelection(), computerSelection());
+    console.log(gameResult);
     if (gameResult[4] == 'w') {
       playerScore += 1;
     } else if (gameResult[4] == 'l') {
@@ -50,7 +51,6 @@ function game() {
     } else {
       ties += 1;
     }
-    console.log(gameResult);
   }
   return `Five rounds are over, you got ${playerScore} wins and ${(5 - playerScore)} lose(s). Number of ties are ${ties}.`
 }
