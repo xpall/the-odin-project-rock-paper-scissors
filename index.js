@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll('.buttonContainer')
+const buttons = document.querySelectorAll('.btn')
 const resultParagraph = document.querySelector('#announcer');
 const finalWinner = document.querySelector('#finalWinner')
 const winCount = document.querySelector('#wins');
