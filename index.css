@@ -1,5 +1,5 @@
-body {
-  padding-top: 5em;
+html {
+  background: radial-gradient(#f2f3f4, #ffffff);
 }
 
 h1,
@@ -7,20 +7,34 @@ h2 {
   margin: 10px;
 }
 
+main {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 90vh;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 3em;
+}
+
 .heading {
   text-align: center;
 }
 
 .buttonContainer {
+  flex-wrap: wrap;
   margin-top: 2em;
   display: flex;
-  flex:auto;
+  flex: auto;
   justify-content: center;
   align-items: center;
   gap: 2em;
 }
 
 .scoreContainer {
+  flex-wrap: wrap;
+  margin-top: 2em;
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -32,10 +46,18 @@ h2 {
   justify-content: center;
   align-items: center;
   font-weight: bolder;
-  border: 2px solid black;
 }
 
 #announcer {
   text-align: center;
   font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  font-size: small;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }

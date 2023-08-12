@@ -1,7 +1,4 @@
 const buttons = document.querySelectorAll('.buttonContainer')
-// const rockButton = document.querySelector('#rock');
-// const paperButton = document.querySelector('#paper');
-// const scissorsButton = document.querySelector('#scissors');
 const resultParagraph = document.querySelector('#announcer');
 const finalWinner = document.querySelector('#finalWinner')
 const winCount = document.querySelector('#wins');
@@ -12,19 +9,8 @@ buttons.forEach(button => {button.addEventListener('click', e => {
   playCurrentRound(e);
 })});
 
-// rockButton.addEventListener('click', e => {
-//   playCurrentRound(e);
-// });
-
-// paperButton.addEventListener('click', e => {
-//   playCurrentRound(e);
-// });
-
-// scissorsButton.addEventListener('click', e => {
-//   playCurrentRound(e);
-// });
-
 function playCurrentRound(e) {
+  console.log(e.target)
   let playerChoice= (e.target.id).toLowerCase();
   let computerChoice = computerSelection();
   let result = (playRound(playerChoice, computerChoice));
@@ -79,7 +65,11 @@ function computerSelection() {
 };
 
 function announceWinner(win, lose) {
-  (win > lose) 
-    ? alert(`You win! With the total of ${win} points!`)
-    : alert(`You lose! Computer wins with ${lose} points!`)
+  if (win > lose) {
+    alert(`You win! With the total of ${win} points!\nRefresh the page to load a new game.`);
+  } else if (win < lose) {
+    alert(`You lose! Computer wins with ${lose} points!\nRefresh the page to load a new game.`);
+  } else {
+    alert(`It\'s a tie!`)
+  }
 }

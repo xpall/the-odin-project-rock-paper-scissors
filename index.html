@@ -7,32 +7,33 @@
   <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-  <div class="heading">
-    <h1>Rock Paper Scissors</h1>
-    <h2>The Odin Project </h2>
-  </div>
-  <div class="container">
-    <div class="buttonContainer">
-      <img class="btn" id="rock" src="pngs/rock.png">
-      <img class="btn" id="paper" src="pngs/paper.png">
-      <img class="btn" id="scissors" src="pngs/scissors.png">
-      <!-- <button class="btn" id="rock">Rock</button> -->
-      <!-- <button class="btn" id="paper">Paper</button>
-      <button class="btn" id="scissors">Scissors</button> -->
+  <main>
+    <div class="heading">
+      <h1>Rock Paper Scissors</h1>
+      <h2>The Odin Project </h2>
     </div>
-    <div class="results">
-      <p class='result' id="finalWinner"></p>
-      <p class="result" id="announcer"></p>
-    </div>
-    <div class="scoreContainer">
-      <p>Wins: </p>
-      <p class="scoreBoard" id="wins"></p>
-      <p>Loses: </p>
-      <p class="scoreBoard" id="loses"></p>
-      <p>Ties: </p>
-      <p class="scoreBoard" id="ties"></p>
-    </div>
-    </div>
+    <div class="container">
+      <div class="buttonContainer">
+        <button class="btn"><img class="btn" id="rock" src="pngs/rock.png"></button>
+        <button class="btn"><img class="btn" id="paper" src="pngs/paper.png"></button>
+        <button class="btn"><img class="btn" id="scissors" src="pngs/scissors.png"></button>
+      </div>
+      <div class="results">
+        <p class='result' id="finalWinner"></p>
+        <p class="result" id="announcer">-</p>
+      </div>
+      <div class="scoreContainer">
+        <p>Wins: </p>
+        <p class="scoreBoard" id="wins"></p>
+        <p>Loses: </p>
+        <p class="scoreBoard" id="loses"></p>
+        <p>Ties: </p>
+        <p class="scoreBoard" id="ties"></p>
+      </div>
+      </div>
+  </main>
+  <footer>&copy; JL 2023</footer>
 </body>
+
   <script src="index.js" defer></script>
 </html>
